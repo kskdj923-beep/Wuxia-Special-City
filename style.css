@@ -2329,23 +2329,211 @@ body.entered #topBar{
   }
 }
 
-.rotate-notice{
-  display:none;
-}
+@media (max-width: 768px){
 
-@media (max-width: 768px) and (orientation: portrait){
-  .rotate-notice{
-    display:flex;
-    position:fixed;
-    inset:0;
-    z-index:9999;
+  body{
+    overflow-x:hidden;
+  }
+
+  .top-bar{
+    height:50px;
+    padding:0 8px;
+  }
+
+  .top-left strong{
+    font-size:13px;
+    letter-spacing:1px;
+  }
+
+  .top-left span{
+    display:none;
+  }
+
+  .top-right{
+    gap:5px;
+  }
+
+  .top-btn{
+    height:30px;
+    padding:0 8px;
+    font-size:11px;
+  }
+
+  .volume-slider{
+    width:58px;
+  }
+
+  .paper-page{
+    padding-top:56px;
     align-items:center;
     justify-content:center;
-    text-align:center;
-    background:#050505;
-    color:#e6c474;
-    font-size:20px;
-    line-height:1.8;
-    padding:30px;
+    overflow:auto;
+  }
+
+  .paper-img{
+    width:94vw;
+    max-height:none;
+  }
+
+  .paper-hitbox{
+    transform:scale(.82);
+  }
+
+  .content-page,
+  .faction-page,
+  .map-page{
+    padding-top:56px;
+    overflow-y:auto;
+  }
+
+  .page-hero{
+    height:180px;
+  }
+
+  .page-inner,
+  .faction-inner{
+    width:92vw;
+    padding:30px 0 70px;
+  }
+
+  .page-top{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:16px;
+  }
+
+  .filter-bar{
+    overflow-x:auto;
+    flex-wrap:nowrap;
+    padding-bottom:8px;
+  }
+
+  .filter-bar button{
+    flex:0 0 auto;
+  }
+
+  .character-grid,
+  .faction-grid{
+    grid-template-columns:1fr;
+    width:100%;
+    gap:16px;
+  }
+
+  .character-card,
+  .faction-card{
+    height:170px;
+  }
+
+  .faction-last{
+    grid-column:auto;
+    width:100%;
+  }
+
+  .modal-card{
+    width:94vw;
+    max-height:86vh;
+    flex-direction:column;
+    overflow-y:auto;
+  }
+
+  .modal-card img{
+    width:100%;
+    max-height:52vh;
+    object-fit:contain;
+  }
+
+  .modal-info{
+    width:100%;
+    padding:22px;
+  }
+
+  .modal-arrow{
+    top:50%;
+    width:38px;
+    height:54px;
+  }
+
+  .modal-arrow.left{
+    left:6px;
+  }
+
+  .modal-arrow.right{
+    right:6px;
+  }
+
+  .world-document{
+    background:url("assets/images/scroll-open.png") center/cover no-repeat;
+    overflow-y:auto;
+  }
+
+  .world-doc-text{
+    position:relative;
+    left:auto;
+    top:auto;
+    transform:none;
+    width:86vw;
+    height:auto;
+    min-height:100vh;
+    margin:70px auto 60px;
+    display:block;
+  }
+
+  .hanmun-side{
+    display:none;
+  }
+
+  .korean-side{
+    padding:24px 10px;
+  }
+
+  .korean-side h2{
+    font-size:42px;
+    letter-spacing:4px;
+  }
+
+  .korean-side p{
+    font-size:15px;
+    line-height:1.75;
+  }
+
+  .korean-side strong{
+    font-size:18px;
+  }
+
+  .map-title{
+    top:62px;
+  }
+
+  .map-title h1{
+    font-size:34px;
+    letter-spacing:6px;
+  }
+
+  .map-title p{
+    font-size:12px;
+    letter-spacing:4px;
+  }
+
+  .district-map{
+    width:100vw;
+    height:100vh;
+    object-fit:cover;
+  }
+
+  .district-marker{
+    padding:8px 13px;
+    font-size:12px;
+  }
+
+  .district-marker.north{left:50%; top:23%;}
+  .district-marker.west{left:25%; top:48%;}
+  .district-marker.center{left:50%; top:46%;}
+  .district-marker.south{left:43%; top:71%;}
+  .district-marker.east{left:76%; top:48%;}
+
+  .district-image,
+  .faction-modal img{
+    max-width:94vw;
+    max-height:88vh;
   }
 }
