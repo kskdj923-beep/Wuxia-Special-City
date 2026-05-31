@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>무림특구</title>
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Serif+KR:wght@700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+<main class="intro">
+  <header id="topBar" class="top-bar">
+  <div class="top-left">
+    <strong>武林特區</strong>
+    <span>정파도 출근하고, 사파도 세금 낸다.</span>
+  </div>
+
+  <div class="top-right">
+    <audio id="bgm" src="assets/audio/bgm.mp3" loop></audio>
+
+    <button id="bgmToggle" class="top-btn bgm-icon">▶</button>
+    <input id="bgmVolume" class="volume-slider" type="range" min="0" max="1" step="0.01" value="0.45">
+
+    <button id="globalBackBtn" class="top-btn">← 특구신보</button>
+  </div>
+</header>
+<img src="assets/images/main-bg.png" class="bg" alt="무림특구 배경">
+<img src="assets/images/board-bg.png" class="board-bg" alt="무림특구 게시판">
+<div class="shade"></div>
+<section class="intro-content">
+  <h1>武林特區</h1>
+  <h2>Wuxia Special City</h2>
+  <button id="enterBtn">도시입장</button>
+  <span class="notice">※ 입장 시 배경음악이 재생됩니다.</span>
+</section>
+<div id="loadingScreen" class="loading-screen">
+  <div class="loading-bar">
+    <div class="loading-fill"></div>
+  </div>
+</div>
+
+<div id="archiveLoading" class="archive-loading">
+  <div class="archive-bg"></div>
+
+  <div class="archive-content">
+    <div class="archive-badge">無林特區 情報組織</div>
+
+    <h2>
+      <small>잔향</small>
+      殘響
+    </h2>
+
+    <p>
+      무림특구에 남겨진 인물 기록을 열람합니다.<br>
+      죽은 자의 이름도, 사라진 자의 흔적도,<br>
+      잔향의 기록고에서는 지워지지 않습니다.
+    </p>
+
+    <strong>人物記錄 開放</strong>
+    <span>잔향 보관 인물기록 열람 승인</span>
+    <img src="assets/images/janhyang-seal.png" class="archive-seal" alt="잔향 직인">
+  </div>
+</div>
+<div id="worldLoading" class="world-loading">
+  <div class="world-bg"></div>
+
+  <div class="world-intro">
+    <img src="assets/images/scroll-closed.png" class="scroll-closed" alt="">
+    <div class="world-title">
+      <h2>황실기밀문서</h2>
+      <span>皇室機密文書</span>
+    </div>
+    <img src="assets/images/seal-unlock.png" class="seal unlock" alt="">
+  </div>
+
+  <div class="world-document">
+  
+  <div class="world-doc-text">
+
+    <section class="hanmun-side">
+
+<h2>武林特區槪要</h2>
+
+<p>
+無道五年十月二十一日
+
+皇室直屬監察官
+韓有明記錄
+
+天下大戰旣終數年
+
+皇室爲制止無窮紛爭與報復
+
+聚存世門派商團罪徒遊俠於一城
+
+名曰武林特區
+
+其初意在監視與統制
+
+然歲月旣久
+
+此城已非皇室一手所能掌握
+
+市井商旅與武人同行
+
+賞金獵人與解決士共飲一席
+
+晝有交易
+
+夜有流血
+
+法度漸衰
+
+利害爲綱
+
+金銀買權
+
+權勢買情
+
+情報定人生死
+
+此地難分善惡
+
+唯存生存之道
+
+故天下之人皆聚於此
+
+求富者來
+
+求名者來
+
+求復讐者來
+
+求秘密者亦來
+
+武林特區無定路
+
+可爲英雄
+
+可爲巨商
+
+可爲罪人
+
+亦可爲無名之屍
+
+此城所求者唯有一事
+
+生存而已
+</p>
+
+</section>
+
+    <section class="korean-side">
+
+<h2>무림특구 개요</h2>
+
+<p class="doc-date">
+無道 五年 十月 二十一日<br>
+황실 직속 감찰관 한유명(韓有明) 조사 기록
+</p>
+
+<p>
+천하대전(天下大戰)이 끝난 지 수년이 흘렀다.
+황실은 끝없는 분쟁과 보복을 막고자 살아남은 문파와 상단,
+범죄조직, 유랑 무인들을 한곳에 모아 무림특구(武林特區)를 세웠다.
+본래 목적은 통제와 감시였으나,
+지금의 무림특구는 황실조차 완전히 손에 넣지 못한 거대한 도시가 되었다.
+</p>
+
+<p>
+거리에는 상인과 무인이 함께 걷고,
+현상금 사냥꾼과 해결사가 같은 객잔에서 술잔을 기울인다.
+낮에는 거래가 오가고 밤에는 피가 흐른다.
+사람들은 이를 이상하게 여기지 않는다.
+이곳에서 칼과 은자는 같은 언어로 통하기 때문이다.
+</p>
+
+<p>
+겉으로는 질서가 유지되고 있으나
+그것은 법이 아닌 이해관계 위에 세워진 균형에 가깝다.
+돈은 권력을 사고,
+권력은 정보를 사고,
+정보는 다시 사람의 목숨값을 결정한다.
+선인과 악인을 구분하기 어려우며
+명분보다 이익이,
+정의보다 생존이 우선된다.
+</p>
+
+<p>
+그러나 바로 그 때문에 수많은 인간들이 이 도시로 모여든다.
+부와 명예를 얻기 위해,
+잃어버린 복수를 이루기 위해,
+숨겨진 비밀을 찾기 위해,
+혹은 단지 살아남기 위해.
+</p>
+
+<p>
+무림특구에는 정해진 길이 존재하지 않는다.
+영웅이 될 수도,
+거상이 될 수도,
+범죄자가 될 수도,
+이름 없는 시체가 될 수도 있다.
+</p>
+
+<strong class="ending">
+이 도시가 원하는 것은 단 하나.<br>
+살아남을 것.<br><br>
+그 이후의 선택은 모두 스스로 결정해야 한다.
+</strong>
+
+</section>
+
+  </div>
+
+</div>
+</div>
+<div id="recordLoading" class="record-loading">
+  <div class="record-text">殘香 人物記錄 閱覽</div>
+  <span>잔향 인물 기록 열람</span>
+</div>
+
+<section id="paperPage" class="paper-page">
+
+  <img src="assets/images/newspaper.png" class="paper-img" alt="특구신보">
+<div class="paper-dust"></div>
+  <a class="paper-hitbox world">
+    <img src="assets/images/world.png" alt="">
+    <div class="paper-label">
+        <strong>세계관</strong>
+        <small>世界觀</small>
+    </div>
+  </a>
+
+  <a class="paper-hitbox people">
+    <img src="assets/images/people.png" alt="">
+    <div class="paper-label">
+      <strong>인물도감</strong>
+      <small>人物圖鑑</small>
+    </div>
+  </a>
+
+  <a class="paper-hitbox faction">
+    <img src="assets/images/faction.png" alt="">
+    <div class="paper-label">
+      <strong>세력도감</strong>
+      <small>勢力圖鑑</small>
+    </div>
+  </a>
+
+  <a class="paper-hitbox map">
+    <img src="assets/images/map.png" alt="">
+    <div class="paper-label">
+      <strong>구역지도</strong>
+      <small>區域地圖</small>
+    </div>
+  </a>
+
+</section>
+
+<section id="peoplePage" class="content-page">
+  <header class="page-hero">
+    <h1>인물도감</h1>
+    <span>人物圖鑑</span>
+  </header>
+
+  <div class="page-inner">
+    <div class="page-top">
+      <div>
+        <h2>무림특구 인물 열람</h2>
+        <p>세력별 주요 인물 기록</p>
+      </div>
+
+      <button id="themeBtn">라이트 테마</button>
+    </div>
+
+    <nav class="filter-bar">
+  <button class="active" data-filter="전체">전체</button>
+  <button data-filter="천도부">천도부</button>
+  <button data-filter="금의위">금의위</button>
+  <button data-filter="천검연">천검연</button>
+  <button data-filter="묵련당">묵련당</button>
+  <button data-filter="흑천회">흑천회</button>
+  <button data-filter="상단">상단</button>
+  <button data-filter="적월교">적월교</button>
+  <button data-filter="잔향">잔향</button>
+</nav>
+
+    <div class="character-grid"></div>
+    </div>
+</section>
+
+<section id="factionPage" class="faction-page">
+  <div class="faction-bg"></div>
+  <div class="faction-dim"></div>
+
+  <div class="faction-inner">
+    <header class="faction-header">
+      <h1>勢力登錄簿</h1>
+      <p>세력 등록부</p>
+    </header>
+
+    <div class="faction-grid">
+
+      <article class="faction-card" data-index="0">
+        <img src="assets/factions/cheondobu-card.png" alt="천도부">
+        <div><h2>천도부</h2><span>天都府</span></div>
+      </article>
+
+      <article class="faction-card" data-index="1">
+        <img src="assets/factions/geumuiwi-card.png" alt="금의위">
+        <div><h2>금의위</h2><span>錦衣衛</span></div>
+      </article>
+
+      <article class="faction-card" data-index="2">
+        <img src="assets/factions/cheongeomyeon-card.png" alt="천검연">
+        <div><h2>천검연</h2><span>天劍聯</span></div>
+      </article>
+
+      <article class="faction-card" data-index="3">
+        <img src="assets/factions/mukryeondang-card.png" alt="묵련당">
+        <div><h2>묵련당</h2><span>墨蓮堂</span></div>
+      </article>
+
+      <article class="faction-card" data-index="4">
+        <img src="assets/factions/yuseongsangdan-card.png" alt="유성상단">
+        <div><h2>유성상단</h2><span>流星商團</span></div>
+      </article>
+
+      <article class="faction-card" data-index="5">
+        <img src="assets/factions/haewonsangdan-card.png" alt="해원상단">
+        <div><h2>해원상단</h2><span>海源商團</span></div>
+      </article>
+
+      <article class="faction-card" data-index="6">
+        <img src="assets/factions/heukcheonhoe-card.png" alt="흑천회">
+        <div><h2>흑천회</h2><span>黑天會</span></div>
+      </article>
+
+      <article class="faction-card" data-index="7">
+        <img src="assets/factions/janhyang-card.png" alt="잔향">
+        <div><h2>잔향</h2><span>殘響</span></div>
+      </article>
+
+      <article class="faction-card faction-last" data-index="8">
+        <img src="assets/factions/jeokwolgyo-card.png" alt="적월교">
+        <div><h2>적월교</h2><span>赤月敎</span></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<div id="factionModal" class="faction-modal">
+  <div class="faction-modal-bg"></div>
+  <button id="factionClose" class="faction-close">×</button>
+  <img id="factionModalImage" src="" alt="">
+</div>
+
+<section id="mapPage" class="map-page">
+  <img src="assets/images/district-map.png" class="district-map" alt="무림특구 구역지도">
+
+  <header class="map-title">
+    <h1>區域地圖</h1>
+    <p>무림특구 구역지도</p>
+  </header>
+
+  <button class="district-marker north" data-district="north">북부지구</button>
+  <button class="district-marker west" data-district="west">서부지구</button>
+  <button class="district-marker center" data-district="center">중앙부</button>
+  <button class="district-marker south" data-district="south">남부지구</button>
+  <button class="district-marker east" data-district="east">동부지구</button>
+</section>
+
+<div id="districtModal" class="district-modal">
+  <div class="district-modal-bg"></div>
+  <button id="districtClose" class="district-close">×</button>
+  <img id="districtImage" class="district-image" src="" alt="">
+</div>
+
+<div class="credit">Made by 김뚝딱</div>
+<div id="characterModal" class="character-modal">
+  <div class="modal-bg"></div>
+
+  <button id="modalClose" class="modal-close">×</button>
+  <button id="prevChar" class="modal-arrow left">‹</button>
+  <button id="nextChar" class="modal-arrow right">›</button>
+
+  <div class="modal-card">
+    <img id="modalImage" src="" alt="">
+
+    <section class="modal-info">
+      <h2 id="modalName"></h2>
+      <span id="modalRole"></span>
+      <p id="modalDesc"></p>
+
+      <dl>
+  <div><dt>세력</dt><dd id="modalFaction"></dd></div>
+  <div><dt>경지</dt><dd id="modalLevel"></dd></div>
+  <div><dt>성격</dt><dd id="modalPersonality"></dd></div>
+  <div><dt>무기</dt><dd id="modalWeapon"></dd></div>
+</dl>
+
+<blockquote id="modalQuote"></blockquote>
+    </section>
+  </div>
+</div>
+</main>
+<script src="script.js" defer></script>
+</body>
+</html>
